@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 //Pages
 // import './about.dart';
@@ -93,11 +94,47 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
+  String name = 'Juan Pablo Quiroga';
+  String yearOld = '50';
+  String home = 'Corrientes 3023, CABA';
+
+  _setName(String aName) {
+    name = aName;
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Mis Datos'),
+      ),
+      body: ListView(
+        children: <Widget>[
+          new ListTile(
+            title: new Text('Nombre: ' + name),
+          ),
+          new ListTile(
+            title: new Text('Edad: ' + yearOld),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (BuildContext context) => new MyShift()));
+            },
+          ),
+          new ListTile(
+            title: new Text('Domicilio: ' + home),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                    builder: (BuildContext context) => new Configuration(),
+                  ));
+            },
+          ),
+        ],
       ),
     );
   }
