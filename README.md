@@ -4,7 +4,7 @@ App - Menú Básico
 
 ## Capturas
 <p> 
+<img src="images/Screen_3.png" align="right" width="350">
 <img src="images/Screen_1.png" align="right" width="350">
 <img src="images/Screen_2.png" align="right" width="350">
-<img src="images/Screen_3.png" align="right" width="350">
 </p>
